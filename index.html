@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Helpful Lads — Local handyman help in Salisbury</title>
+<meta name="description" content="Two sixteen-year-olds from Wiltshire and Hampshire offering jet washing, gardening, car cleaning and a friendly extra pair of hands. £30 base, refund if the job takes more than two hours." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #2d5a3f;
+    --green-dark: #1f3f2c;
+    --cream: #faf6ee;
+    --paper: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --accent: #e8a93c;
+    --border: #e6dfd0;
+    --shadow: 0 6px 24px rgba(31, 63, 44, 0.08);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--cream);
+  }
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--green-dark);
+    margin: 0 0 0.5em;
+  }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 0.6em; }
+  h3 { font-size: 1.3rem; }
+  p { margin: 0 0 1em; color: var(--ink-soft); }
+  a { color: var(--green); }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(250, 246, 238, 0.95);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 50;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    gap: 16px;
+  }
+  .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--green-dark);
+    text-decoration: none;
+  }
+  .brand span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  .nav-links a:hover { color: var(--green); }
+  .call-btn {
+    background: var(--green);
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background .2s;
+  }
+  .call-btn:hover { background: var(--green-dark); }
+  @media (max-width: 720px) {
+    .nav-links a:not(.call-btn) { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 60px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  .hero h1 { margin-bottom: 0.3em; }
+  .hero-tagline {
+    font-size: 1.2rem;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .btn-primary { background: var(--green); color: white; }
+  .btn-primary:hover { background: var(--green-dark); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--green);
+    border: 2px solid var(--green);
+  }
+  .btn-secondary:hover { background: var(--green); color: white; }
+  .hero-photo {
+    background: linear-gradient(135deg, #c8d8b9 0%, #8aab73 100%);
+    border-radius: 24px;
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; padding: 48px 0 32px; }
+    .hero-photo { aspect-ratio: 4/3; }
+  }
+
+  /* Sections */
+  section { padding: 64px 0; }
+  section.alt { background: var(--paper); }
+  .section-eyebrow {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+  .section-intro { max-width: 700px; margin: 0 auto 48px; text-align: center; }
+  .section-intro h2 { margin-bottom: 0.4em; }
+
+  /* Founders */
+  .founders {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .founder-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+  }
+  section.alt .founder-card { background: var(--cream); }
+  .founder-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, #d4c5a3 0%, #a08a5e 100%);
+    border-radius: 16px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .founder-card h3 { margin-bottom: 0.2em; }
+  .founder-card .role {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .founder-card .role.support { background: var(--accent); color: var(--ink); }
+  @media (max-width: 720px) {
+    .founders { grid-template-columns: 1fr; }
+  }
+
+  /* Services */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .service {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+  }
+  section.alt .service { background: var(--cream); }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--green);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 14px;
+    font-size: 1.2rem;
+  }
+  .service h3 { font-size: 1.1rem; color: var(--ink); margin-bottom: 0.3em; }
+  .service p { font-size: 0.95rem; margin-bottom: 0; }
+  @media (max-width: 820px) {
+    .services { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .services { grid-template-columns: 1fr; }
+  }
+
+  /* How it works */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .step {
+    text-align: center;
+    padding: 24px 16px;
+  }
+  .step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .step h3 { font-size: 1.05rem; margin-bottom: 0.4em; }
+  .step p { font-size: 0.95rem; }
+  @media (max-width: 720px) {
+    .steps { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Pricing callout */
+  .pricing-callout {
+    margin-top: 48px;
+    background: var(--green);
+    color: white;
+    border-radius: 24px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .pricing-callout h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.3em;
+  }
+  .pricing-callout p { color: rgba(255,255,255,0.85); margin-bottom: 0; }
+  .price-tag {
+    background: var(--accent);
+    color: var(--ink);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+  .price-tag .price {
+    font-family: 'Fraunces', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+  }
+  .price-tag .price-sub {
+    font-weight: 600;
+    margin-top: 6px;
+    display: block;
+  }
+  @media (max-width: 720px) {
+    .pricing-callout { grid-template-columns: 1fr; padding: 28px; }
+  }
+
+  /* Coverage */
+  .coverage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .coverage-map {
+    aspect-ratio: 1 / 1;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(45,90,63,0.18) 0%, rgba(45,90,63,0.18) 38%, transparent 39%),
+      radial-gradient(circle at 50% 50%, rgba(232,169,60,0.4) 0%, rgba(232,169,60,0.4) 6%, transparent 7%),
+      linear-gradient(135deg, #e8e3d4 0%, #d6cdb3 100%);
+    border-radius: 24px;
+    position: relative;
+    box-shadow: var(--shadow);
+  }
+  .map-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--green);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+  }
+  .coverage ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+  }
+  .coverage li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+  }
+  .coverage li:before { content: "✓"; color: var(--green); font-weight: 700; margin-right: 12px; }
+  @media (max-width: 720px) {
+    .coverage { grid-template-columns: 1fr; }
+  }
+
+  /* Before & after */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .gallery-item {
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #b8c9a8 0%, #6f8d5b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Fraunces', serif;
+    text-align: center;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery-item.placeholder { background: linear-gradient(135deg, #d4c5a3 0%, #a08a5e 100%); }
+  .gallery-item .label {
+    background: rgba(0,0,0,0.5);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+  @media (max-width: 720px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Testimonials */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .testimonial {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  section.alt .testimonial { background: var(--cream); }
+  .testimonial-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink);
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+  }
+  .testimonial-author { font-weight: 600; color: var(--green-dark); font-size: 0.95rem; }
+  .testimonial-meta { font-size: 0.85rem; color: var(--ink-soft); }
+  @media (max-width: 820px) {
+    .testimonials { grid-template-columns: 1fr; }
+  }
+
+  /* Contact */
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+  }
+  .contact-details a {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 1.15rem;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-details a:hover { color: var(--green); }
+  .contact-details .label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  form { display: grid; gap: 14px; }
+  label { font-weight: 500; font-size: 0.95rem; color: var(--ink); }
+  input, textarea, select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: var(--paper);
+  }
+  textarea { min-height: 110px; resize: vertical; }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(45,90,63,0.15);
+  }
+  form button {
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    justify-self: start;
+  }
+  form button:hover { background: var(--green-dark); }
+  @media (max-width: 820px) {
+    .contact { grid-template-columns: 1fr; }
+  }
+
+  /* Footer */
+  footer {
+    background: var(--green-dark);
+    color: rgba(255,255,255,0.85);
+    padding: 40px 0 24px;
+    margin-top: 32px;
+  }
+  footer p { color: rgba(255,255,255,0.7); margin: 0 0 8px; font-size: 0.9rem; }
+  footer .brand { color: white; }
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 20px;
+  }
+  .footer-small { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="brand">The Helpful <span>Lads</span></a>
+    <nav class="nav-links">
+      <a href="#meet">Meet us</a>
+      <a href="#services">What we do</a>
+      <a href="#how">How it works</a>
+      <a href="#where">Where we work</a>
+      <a href="#contact" class="call-btn">Call 07XXX XXX XXX</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container hero">
+      <div>
+        <span class="hero-eyebrow">First job free for friends &amp; family</span>
+        <h1>Local help, honest work.</h1>
+        <p class="hero-tagline">Two sixteen-year-olds from Salisbury offering jet washing, gardening, car cleaning and a friendly extra pair of hands — for the neighbours who'd rather hire a local lad than a pricey contractor.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn-primary">Get in touch</a>
+          <a href="#how" class="btn-secondary">How it works</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        [Photo of Mikey &amp; Aidan<br>with jet wash gear]
+      </div>
+    </div>
+  </section>
+
+  <section id="meet" class="alt">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-eyebrow">Meet the lads</div>
+        <h2>Who we are</h2>
+        <p>We're two sixteen-year-olds finishing our GCSEs this summer. We thought we'd put the long break to good use — earning a bit of money, learning some real skills, and giving our neighbours an honest, local pair of hands.</p>
+      </div>
+      <div class="founders">
+        <div class="founder-card">
+          <div class="founder-photo">[Photo of Mikey]</div>
+          <h3>Mikey Davies</h3>
+          <span class="role">Lead</span>
+          <p><strong>Age 16 · Lives in Salisbury, Wiltshire</strong></p>
+          <p>I want to learn the kind of skills you can take into adulthood — carpentry, gardening, looking after a place. One day I'd like to buy a rundown house and do it up myself, so this summer is my first step. I'm reliable, polite, and I take pride in finishing a job properly.</p>
+        </div>
+        <div class="founder-card">
+          <div class="founder-photo">[Photo of Aidan]</div>
+          <h3>Aidan Stevens</h3>
+          <span class="role support">Co-founder</span>
+          <p><strong>Age 16 · Lives in Hampshire</strong></p>
+          <p>I help out on bigger jobs and on weekends when I can travel up to Salisbury. I'm the planner — happy to help with quotes, scheduling and keeping things organised. Together Mikey and I want to build something real this summer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-eyebrow">What we do</div>
+        <h2>Honest manual help, by the hour</h2>
+        <p>We're not qualified contractors — and we won't pretend to be. We're the friendly help next door for the jobs that don't need one.</p>
+      </div>
+      <div class="services">
+        <div class="service">
+          <div class="service-icon">💧</div>
+          <h3>Patio &amp; driveway jet washing</h3>
+          <p>Bringing your patio, paving or driveway back to life. We'll bring the jet wash.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">🌿</div>
+          <h3>Gardening &amp; tidy-ups</h3>
+          <p>Weeding, mowing, hedge trimming, clearing leaves — the standing-on-your-feet jobs.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">🚗</div>
+          <h3>Car cleaning</h3>
+          <p>A proper wash and inside vacuum. Bring it back showroom-bright.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">📦</div>
+          <h3>Moving furniture</h3>
+          <p>An extra pair of hands when you need to shift a sofa, wardrobe or boxes around the house.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">🪣</div>
+          <h3>Window &amp; outdoor cleaning</h3>
+          <p>Windows, gutters within reach, bins, outdoor furniture — the bits that get forgotten.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">🛠️</div>
+          <h3>General odd jobs</h3>
+          <p>Most non-specialist jobs around the house and garden. If you're not sure, just ask.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="alt">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-eyebrow">How it works</div>
+        <h2>Simple and upfront</h2>
+        <p>No surprise bills, no pushy quotes. Four steps, and you only pay if you're happy.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Get in touch</h3>
+          <p>Call or email us. Tell us roughly what needs doing.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>We pop round</h3>
+          <p>We'll come out at a time that suits you, with our own kit.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>£30 base fee</h3>
+          <p>Covers our time and travel for up to two hours of work.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Two-hour guarantee</h3>
+          <p>If a job takes longer than two hours, we refund your £30. Our promise.</p>
+        </div>
+      </div>
+
+      <div class="pricing-callout">
+        <div>
+          <h3>The two-hour guarantee</h3>
+          <p>It's our way of saying: pay us if we got the job done quickly and well. If it takes longer than expected, that's on us, not you. We want this to feel fair — and to build a name in the neighbourhood for honest work.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price">£30</span>
+          <span class="price-sub">base fee · up to 2 hours</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="where">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-eyebrow">Where we work</div>
+        <h2>Salisbury and the villages around it</h2>
+        <p>Mikey is based in Salisbury and can cover around ten kilometres in any direction without needing a lift. For jobs further out — or in Hampshire where Aidan lives — give us a shout and we'll work it out.</p>
+      </div>
+      <div class="coverage">
+        <div class="coverage-map" aria-label="Coverage area map showing Salisbury with a roughly 10km radius">
+          <div class="map-pin">Salisbury</div>
+        </div>
+        <div>
+          <h3>Areas we cover regularly</h3>
+          <ul>
+            <li>Salisbury city centre</li>
+            <li>Wilton, Bemerton &amp; Quidhampton</li>
+            <li>Amesbury &amp; Old Sarum</li>
+            <li>Downton &amp; Alderbury</li>
+            <li>Tisbury, Wilton, Coombe Bissett</li>
+            <li>Further afield by arrangement (parent's lift or train)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="alt">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-eyebrow">Before &amp; after</div>
+        <h2>The proof is in the patio</h2>
+        <p>We'll add real before-and-afters here as the jobs come in. Here are some examples of the kind of difference a good clean can make.</p>
+      </div>
+      <div class="gallery">
+        <div class="gallery-item"><span class="label">Patio · Before</span></div>
+        <div class="gallery-item placeholder"><span class="label">Patio · After</span></div>
+        <div class="gallery-item"><span class="label">Driveway · Before</span></div>
+        <div class="gallery-item placeholder"><span class="label">Driveway · After</span></div>
+        <div class="gallery-item"><span class="label">Garden · Before</span></div>
+        <div class="gallery-item placeholder"><span class="label">Garden · After</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-eyebrow">Kind words</div>
+        <h2>What people say</h2>
+        <p>We're new — these will be filled in as our first friends, family and neighbours give us a try. Want to be one of our first testimonials? Get in touch.</p>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial-quote">"Polite, on time and they jet-washed the whole patio in under two hours. Lovely to give the work to local lads."</div>
+          <div class="testimonial-author">Sample testimonial</div>
+          <div class="testimonial-meta">To be added after first jobs</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-quote">"They helped move our old sofa out and the new one in. Saved us a trip and our backs. We'll have them back."</div>
+          <div class="testimonial-author">Sample testimonial</div>
+          <div class="testimonial-meta">To be added after first jobs</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-quote">"Lovely young men, very respectful. Did a proper job on the garden. Highly recommend to anyone in the village."</div>
+          <div class="testimonial-author">Sample testimonial</div>
+          <div class="testimonial-meta">To be added after first jobs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="alt">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-eyebrow">Get in touch</div>
+        <h2>Hire the lads</h2>
+        <p>Drop us a line or pick up the phone. We usually reply within a few hours.</p>
+      </div>
+      <div class="contact">
+        <div class="contact-details">
+          <a href="tel:+447XXXXXXXXX">
+            <span class="label">Phone</span>
+            07XXX XXX XXX
+          </a>
+          <a href="mailto:hello@thehelpfullads.co.uk">
+            <span class="label">Email</span>
+            hello@thehelpfullads.co.uk
+          </a>
+          <a href="#">
+            <span class="label">Based in</span>
+            Salisbury, Wiltshire
+          </a>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Thanks! In the real site this would send us an email.');">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="Mrs Jones" required />
+          </div>
+          <div>
+            <label for="email">Email or phone</label>
+            <input id="email" name="email" type="text" placeholder="01722 123456 or you@example.com" required />
+          </div>
+          <div>
+            <label for="service">What do you need help with?</label>
+            <select id="service" name="service">
+              <option>Jet washing</option>
+              <option>Gardening &amp; tidy-up</option>
+              <option>Car cleaning</option>
+              <option>Moving furniture</option>
+              <option>Window/outdoor cleaning</option>
+              <option>Other / not sure</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Anything else we should know?</label>
+            <textarea id="message" name="message" placeholder="Roughly when, where, and what needs doing."></textarea>
+          </div>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div>
+        <span class="brand">The Helpful <span style="color: var(--accent);">Lads</span></span>
+        <p style="margin-top: 8px;">Local help. Honest work. Salisbury, Wiltshire.</p>
+      </div>
+      <div>
+        <p>07XXX XXX XXX · hello@thehelpfullads.co.uk</p>
+        <p>Mon–Sat, daylight hours</p>
+      </div>
+    </div>
+    <p class="footer-small">We're sixteen and not registered tradesmen. We work under our parents' supervision and only take on jobs we know we can do safely. For anything involving gas, electricity, working at height or specialist tools, please hire a qualified professional. © 2026 The Helpful Lads.</p>
+  </div>
+</footer>
+
+</body>
+</html>
